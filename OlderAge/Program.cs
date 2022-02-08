@@ -1,5 +1,6 @@
 ﻿using System;
 using OlderAge.Entities;
+using System.Collections.Generic;
 
 namespace OlderAge
 {
@@ -8,6 +9,7 @@ namespace OlderAge
         static void Main(string[] args)
         {
             People people = new People();
+            HashSet<People> list = new HashSet<People>();
 
             try 
             {

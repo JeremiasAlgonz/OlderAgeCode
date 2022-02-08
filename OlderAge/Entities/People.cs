@@ -24,5 +24,16 @@ namespace OlderAge.Entities
             People other = obj as People;
             Console.WriteLine($"{other.Name}, {other.Age}.");
         }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is People))
+            {
+                throw new Exception("Invalid argument! Object is not People.");
+            }
+
+            People other = obj as People;
+            return Age.Equals(other.Age);
+        }
     }
 }
