@@ -9,7 +9,7 @@ namespace OlderAge
         static void Main(string[] args)
         {
             People people = new People();
-            HashSet<People> list = new HashSet<People>();
+            List<People> list = new List<People>();
 
             try 
             {
@@ -24,7 +24,8 @@ namespace OlderAge
                     Console.Write($"Enter people #{i} age: ");
                     int age = int.Parse(Console.ReadLine());
 
-                    people = new People(name, age);
+                    
+                    list.Add(new People(name, age));
                 }
                 
             }

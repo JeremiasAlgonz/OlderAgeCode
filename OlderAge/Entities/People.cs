@@ -3,7 +3,7 @@
 
 namespace OlderAge.Entities
 {
-    class People
+    class People : IComparable
     {
         public string Name { get; set; }
         public int Age { get; set; }
@@ -25,15 +25,15 @@ namespace OlderAge.Entities
             Console.WriteLine($"{other.Name}, {other.Age}.");
         }
 
-        public override bool Equals(object obj)
+        public int CompareTo(object obj)
         {
             if (!(obj is People))
             {
-                throw new Exception("Invalid argument! Object is not People.");
+                throw new Exception("Invalid Argument! Object is not a People object.");
             }
 
             People other = obj as People;
-            return Age.Equals(other.Age);
+            return Age.CompareTo(other.Age);
         }
     }
 }
