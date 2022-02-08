@@ -9,6 +9,7 @@ namespace OlderAge
         static void Main(string[] args)
         {
             People people = new People();
+            People olderP = new People();
             List<People> list = new List<People>();
 
             try 
@@ -24,10 +25,28 @@ namespace OlderAge
                     Console.Write($"Enter people #{i} age: ");
                     int age = int.Parse(Console.ReadLine());
 
-                    
+                    Console.WriteLine("----------------------------------");
                     list.Add(new People(name, age));
                 }
+
                 
+
+                foreach (var item in list)
+                {
+                    if (item.CompareTo(olderP) > 0)
+                    {
+                        olderP = item;
+                    }
+
+                }
+
+
+                Console.WriteLine("The oldest among the people is:");
+                people.ShowData(olderP);
+
+                Console.WriteLine();
+                Console.ReadLine();
+
             }
             catch(Exception e)
             {
